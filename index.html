@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simfoni.ai - AI-Powered Product Development Ecosystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            light: '#6EE7B7',
+                            DEFAULT: '#10B981',
+                            dark: '#059669',
+                        },
+                        secondary: {
+                            light: '#93C5FD',
+                            DEFAULT: '#3B82F6',
+                            dark: '#2563EB',
+                        },
+                        background: {
+                            light: '#F3F4F6',
+                            dark: '#1F2937',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #10B981, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-sans transition-colors duration-300">
+
+    <header class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+        <nav class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
+            <div class="text-3xl font-bold gradient-text">simfoni.ai</div>
+            <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary hover:dark:text-primary-light transition duration-300">Features</a>
+                <a href="#how-it-works" class="text-gray-600 dark:text-gray-300 hover:text-primary hover:dark:text-primary-light transition duration-300">How It Works</a>
+                <button id="joinListBtn" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-full transition duration-300">
+                    Join the List
+                </button>
+                <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pt-32 pb-20 overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" id="mainTitle">Orchestrate Product Development with AI</h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300" id="mainSubtitle">simfoni.ai is your AI-powered ecosystem that transforms ideas into market-ready digital products. From concept to launch, we blend cutting-edge AI with human expertise to accelerate your product development journey.</p>
+                    <button class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg" id="mainCTA">
+                        Join the Innovation Waitlist
+                    </button>
+                </div>
+                <div class="mt-16 relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-light to-secondary-light opacity-20 blur-3xl"></div>
+                    <div class="relative z-10 bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-8">
+<svg class="w-full h-auto mb-8" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Background -->
+                            <rect width="800" height="400" fill="#1F2937" />
+                            <!-- Central Hub (simfoni.ai) -->
+                            <circle cx="400" cy="200" r="80" fill="url(#grad1)" />
+                            <text x="400" y="210" font-size="24" fill="#FFFFFF" text-anchor="middle">simfoni.ai</text>
+                            <!-- Ecosystem Components -->
+                            <g id="component1">
+                                <circle cx="200" cy="100" r="60" fill="#10B981" opacity="0.8" />
+                                <text x="200" y="105" font-size="14" fill="#FFFFFF" text-anchor="middle">AI Analysis</text>
+                            </g>
+                            <g id="component2">
+                                <circle cx="600" cy="100" r="60" fill="#3B82F6" opacity="0.8" />
+                                <text x="600" y="105" font-size="14" fill="#FFFFFF" text-anchor="middle">Expert Input</text>
+                            </g>
+                            <g id="component3">
+                                <circle cx="200" cy="300" r="60" fill="#3B82F6" opacity="0.8" />
+                                <text x="200" y="305" font-size="14" fill="#FFFFFF" text-anchor="middle">Development</text>
+                            </g>
+                            <g id="component4">
+                                <circle cx="600" cy="300" r="60" fill="#10B981" opacity="0.8" />
+                                <text x="600" y="305" font-size="14" fill="#FFFFFF" text-anchor="middle">Launch</text>
+                            </g>
+                            <!-- Connecting Lines -->
+                            <line x1="270" y1="130" x2="330" y2="170" stroke="#FFFFFF" stroke-width="2" />
+                            <line x1="530" y1="130" x2="470" y2="170" stroke="#FFFFFF" stroke-width="2" />
+                            <line x1="270" y1="270" x2="330" y2="230" stroke="#FFFFFF" stroke-width="2" />
+                            <line x1="530" y1="270" x2="470" y2="230" stroke="#FFFFFF" stroke-width="2" />
+                            <!-- Flow Arrows -->
+                            <path d="M400 120 L400 80 L440 100 Z" fill="#FFFFFF" />
+                            <path d="M680 200 L720 200 L700 240 Z" fill="#FFFFFF" />
+                            <path d="M400 280 L400 320 L360 300 Z" fill="#FFFFFF" />
+                            <path d="M120 200 L80 200 L100 160 Z" fill="#FFFFFF" />
+                        </svg>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <h3 class="text-2xl font-semibold mb-2 text-primary">300% Faster</h3>
+                                <p>Development acceleration through AI-driven insights and automation</p>
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-semibold mb-2 text-secondary">60% Less Risk</h3>
+                                <p>Predictive analysis reduces project uncertainties and potential pitfalls</p>
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-semibold mb-2 text-accent">85% More Efficient</h3>
+                                <p>Optimized workflows and AI-human collaboration boost team productivity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Add this new section after the main hero section and before the "Comprehensive Product Development Support" section -->
+
+<section id="realizing-opportunities" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Turning Ideas into Reality: The 0 to 1 Challenge</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                <div class="p-8">
+                    <p class="text-lg mb-6">Let's face it: bringing great ideas to life is tough. Whether you're a startup or a Fortune 500 company, getting from 0 to 1 can feel like climbing Mount Everest in flip-flops.</p>
+                    
+                    <h3 class="text-2xl font-semibold mb-4 text-primary">Why is it so hard?</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Scope Creep</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Ideas are like balloons – they keep expanding until they pop!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Siloed Perspectives</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Everyone's an expert in their own bubble, but who sees the big picture?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Rare Expertise</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Finding a well-rounded expert is like finding a unicorn that does taxes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Analysis Paralysis</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Too many options, too little time. Decision-making becomes a maze.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold mb-4 text-primary">Enter simfoni.ai: Your 0 to 1 Superpower</h3>
+                    
+                    <p class="text-lg mb-6">Imagine having a genius best friend who's also a Swiss Army knife. That's simfoni.ai for your business. We're here to turn that daunting 0 to 1 journey into your greatest asset.</p>
+
+                    <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-xl">How simfoni.ai works its magic:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>Tames wild ideas into actionable plans</li>
+                            <li>Brings together insights from every corner of your business</li>
+                            <li>Offers expert-level advice without the expert-level ego</li>
+                            <li>Finds the shortest path between "What if?" and "Wow!"</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-lg mt-6">With simfoni.ai, you're not just solving problems – you're unlocking opportunities you didn't even know existed. It's like having a crystal ball, but one that actually works and doesn't require any hand-waving.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <section id="product-development-aspects" class="py-20 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Comprehensive Product Development Support</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            <h3 class="text-xl font-semibold text-primary">Strategic Planning</h3>
+                        </div>
+                        <p class="text-sm">From project scope to risk mitigation, we've got your strategy covered.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                            <h3 class="text-xl font-semibold text-primary">Product Requirements</h3>
+                        </div>
+                        <p class="text-sm">Defining clear, comprehensive requirements for seamless development.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+                            <h3 class="text-xl font-semibold text-primary">Design & Prototyping</h3>
+                        </div>
+                        <p class="text-sm">Bringing your vision to life with stunning designs and interactive prototypes.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <h3 class="text-xl font-semibold text-primary">Development & Testing</h3>
+                        </div>
+                        <p class="text-sm">Agile development with robust testing for flawless execution.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                            <h3 class="text-xl font-semibold text-primary">User Validation</h3>
+                        </div>
+                        <p class="text-sm">Ensuring your product resonates with users through comprehensive testing and feedback.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <h3 class="text-xl font-semibold text-primary">Launch & Growth</h3>
+                        </div>
+                        <p class="text-sm">Strategizing for successful launch and continuous growth post-release.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <section id="pragmatic-solutions" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Pragmatic Solutions for Rapid Validation</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary">Hustle Like a Startup, Scale Like an Enterprise</h3>
+                    <p class="text-lg mb-6">simfoni.ai empowers organizations of all sizes to think outside the box and move with the agility of a startup, even if you're a Fortune 500 company.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Rapid Validation</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Quickly test ideas with solutions that may not scale initially, but provide crucial insights.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Unorthodox Approaches</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Discover innovative solutions that don't always rely on cutting-edge tech, but deliver results.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Scalable Thinking</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Start small, validate quickly, and scale intelligently as your solution proves its worth.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold mb-1">Balance Risk and Innovation</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Find the sweet spot between calculated risks and groundbreaking innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-xl">How simfoni.ai Drives Pragmatic Innovation:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>Generates diverse solution strategies, from quick wins to long-term plays</li>
+                            <li>Identifies opportunities for lean experimentation and MVP development</li>
+                            <li>Balances resource allocation between immediate needs and future scalability</li>
+                            <li>Continuously adapts plans based on real-world feedback and market dynamics</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-lg mt-6">With simfoni.ai, you're not just building products; you're cultivating a culture of smart, agile innovation that can compete in today's fast-paced market, regardless of your company's size.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tailored-solutions" class="py-20 bg-gradient-to-br from-gray-900 via-primary-dark to-secondary-dark text-white overflow-hidden">
+    <div class="container mx-auto px-4 relative">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="w-64 h-64 bg-primary rounded-full absolute -top-32 -left-32 filter blur-3xl opacity-20"></div>
+            <div class="w-96 h-96 bg-secondary rounded-full absolute -bottom-48 -right-48 filter blur-3xl opacity-20"></div>
+            <div class="w-48 h-48 bg-primary-light rounded-full absolute top-1/4 left-1/4 filter blur-3xl opacity-10"></div>
+            <div class="w-72 h-72 bg-secondary-light rounded-full absolute bottom-1/4 right-1/3 filter blur-3xl opacity-10"></div>
+        </div>
+        
+        <h2 class="text-5xl font-extrabold mb-16 text-center leading-tight relative z-10">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-secondary-light">Tailored Solutions</span>
+            <br>Within Your Universe
+        </h2>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-8 transform hover:scale-105 transition duration-300 group border border-white border-opacity-20 shadow-lg">
+                    <div class="h-24 w-24 bg-primary bg-opacity-30 rounded-full mb-6 flex items-center justify-center group-hover:animate-spin backdrop-filter backdrop-blur-sm border border-primary border-opacity-50">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Team-Aware Solutions</h3>
+                    <p class="text-lg">Leverages your team's unique strengths and skills to propose achievable, custom-fit solutions.</p>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-8 transform hover:scale-105 transition duration-300 group md:translate-y-8 border border-white border-opacity-20 shadow-lg">
+                    <div class="h-24 w-24 bg-secondary bg-opacity-30 rounded-full mb-6 flex items-center justify-center group-hover:animate-spin backdrop-filter backdrop-blur-sm border border-secondary border-opacity-50">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Requirement-Compliant</h3>
+                    <p class="text-lg">Adheres strictly to your technical, business, and legal requirements, ensuring seamless integration.</p>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-8 transform hover:scale-105 transition duration-300 group border border-white border-opacity-20 shadow-lg">
+                    <div class="h-24 w-24 bg-primary bg-opacity-30 rounded-full mb-6 flex items-center justify-center group-hover:animate-spin backdrop-filter backdrop-blur-sm border border-primary border-opacity-50">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Technology-Aligned</h3>
+                    <p class="text-lg">Recommends solutions using technologies your team excels in, maximizing efficiency and output quality.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white bg-opacity-5 backdrop-filter backdrop-blur-lg rounded-lg p-10 transform hover:scale-105 transition duration-300 border border-white border-opacity-20 shadow-xl">
+                <h3 class="text-3xl font-bold mb-8 text-center">How simfoni.ai Crafts Your Perfect Fit</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex items-center space-x-4 bg-white bg-opacity-5 p-4 rounded-lg backdrop-filter backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-primary bg-opacity-30 rounded-full flex items-center justify-center flex-shrink-0 border border-primary border-opacity-50">
+                            <span class="text-2xl font-bold">1</span>
+                        </div>
+                        <p class="text-lg">Analyzes your team's skill set and technological proficiencies</p>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white bg-opacity-5 p-4 rounded-lg backdrop-filter backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-secondary bg-opacity-30 rounded-full flex items-center justify-center flex-shrink-0 border border-secondary border-opacity-50">
+                            <span class="text-2xl font-bold">2</span>
+                        </div>
+                        <p class="text-lg">Incorporates project-specific requirements and constraints</p>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white bg-opacity-5 p-4 rounded-lg backdrop-filter backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-primary bg-opacity-30 rounded-full flex items-center justify-center flex-shrink-0 border border-primary border-opacity-50">
+                            <span class="text-2xl font-bold">3</span>
+                        </div>
+                        <p class="text-lg">Balances innovation with feasibility and compliance</p>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white bg-opacity-5 p-4 rounded-lg backdrop-filter backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-secondary bg-opacity-30 rounded-full flex items-center justify-center flex-shrink-0 border border-secondary border-opacity-50">
+                            <span class="text-2xl font-bold">4</span>
+                        </div>
+                        <p class="text-lg">Proposes solutions that maximize current capabilities while planning for future growth</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center relative z-10">
+                <p class="text-3xl font-bold mb-4">With simfoni.ai, you're not getting generic advice.</p>
+                <p class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-secondary-light">
+                    You're receiving strategies tailored to your unique universe.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+      
+      <section id="blended-workforce" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Blended Workforce Solution</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="md:flex">
+                            <div class="md:flex-shrink-0">
+                                <svg class="h-48 w-full md:w-48" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="192" height="192" fill="#1F2937"/>
+                                    <circle cx="96" cy="96" r="60" fill="#10B981" opacity="0.2"/>
+                                    <circle cx="96" cy="96" r="40" fill="#3B82F6" opacity="0.4"/>
+                                    <path d="M72 96 L96 72 L120 96 L96 120 Z" fill="#FFFFFF"/>
+                                    <circle cx="96" cy="96" r="10" fill="#FFFFFF"/>
+                                </svg>
+                            </div>
+                            <div class="p-8">
+                                <div class="uppercase tracking-wide text-sm text-primary font-semibold">Unique Approach</div>
+                                <h3 class="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">AI-Human Synergy</h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">Seamlessly blending AI capabilities with human expertise for optimal outcomes.</p>
+                            </div>
+                        </div>
+                        <div class="px-8 py-4 bg-gray-100 dark:bg-gray-700 flex flex-wrap items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <span class="text-sm">Intelligent task allocation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-sm">AI-assisted decision making</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                                <span class="text-sm">Real-time collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-semibold mb-4 text-center text-primary">Seamless Integration</h3>
+                        <div class="flex flex-wrap justify-center items-center gap-4">
+                            <div class="flex items-center bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-full">
+<svg class="w-6 h-6 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"></path></svg>
+                <span>Slack</span>
+            </div>
+            <div class="flex items-center bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-full">
+                <svg class="w-6 h-6 text-blue-700 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0a12 12 0 1 0 12 12A12.013 12.013 0 0 0 12 0zM8.24 4.963a4.958 4.958 0 0 1 2.553-.705 4.885 4.885 0 0 1 4.88 4.88 4.958 4.958 0 0 1-.705 2.553L8.24 4.963zm-.992.992 6.728 6.728a4.958 4.958 0 0 1-2.553.705 4.885 4.885 0 0 1-4.88-4.88 4.958 4.958 0 0 1 .705-2.553zm-2.21 7.014a4.885 4.885 0 0 1 4.88-4.88 4.958 4.958 0 0 1 2.553.705l-6.728 6.728a4.958 4.958 0 0 1-.705-2.553zm7.014 2.21 6.728-6.728a4.958 4.958 0 0 1 .705 2.553 4.885 4.885 0 0 1-4.88 4.88 4.958 4.958 0 0 1-2.553-.705z"></path></svg>
+                <span>MS Teams</span>
+            </div>
+            <div class="flex items-center bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-full">
+                <svg class="w-6 h-6 text-red-500 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm6.936 8.322c0 2.403-1.896 4.963-3.704 7.377-1.014 1.355-2.038 2.594-2.857 3.51a8.155 8.155 0 0 1-.674.735.374.374 0 0 1-.516 0 8.213 8.213 0 0 1-.674-.735c-.819-.916-1.843-2.155-2.857-3.51-1.808-2.414-3.704-4.974-3.704-7.377 0-3.534 3.045-6.174 6.45-5.198 1.243.356 2.363 1.198 3.099 2.367.736-1.169 1.856-2.01 3.099-2.367 3.405-.976 6.45 1.664 6.45 5.198z"></path></svg>
+                <span>Email</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-center text-primary">Optimized Decision Making</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="flex items-start">
+                <svg class="w-8 h-8 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <div>
+                    <h4 class="font-semibold mb-1">AI-Generated Proposals</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Data-driven suggestions based on market trends and best practices</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <svg class="w-8 h-8 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                <div>
+                    <h4 class="font-semibold mb-1">Human Expert Review</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Refined AI suggestions with expert insights and creativity</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <svg class="w-8 h-8 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <div>
+                    <h4 class="font-semibold mb-1">Transparent Reasoning</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Clear justification for every recommendation and decision</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <svg class="w-8 h-8 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                <div>
+                    <h4 class="font-semibold mb-1">Continuous Optimization</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Ongoing improvements based on project outcomes and feedback</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+           <section id="how-it-works" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center gradient-text">How simfoni.ai Works</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary"></div>
+                        <div class="space-y-16">
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h3 class="text-2xl font-semibold mb-2">1. Vision Input</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Share your product vision or business challenge through our intuitive interface. Our AI understands context, goals, and constraints.</p>
+                                </div>
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">1</div>
+                                <div class="w-1/2 pl-8">
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="400" height="300" fill="#1F2937" />
+                                        <!-- Laptop shape -->
+                                        <path d="M100 50 L300 50 L320 230 L80 230 Z" fill="#3B82F6" />
+                                        <rect x="110" y="70" width="180" height="120" fill="#FFFFFF" />
+                                        <!-- Ideas and vision representation -->
+                                        <circle cx="200" cy="130" r="40" fill="#10B981" opacity="0.2" />
+                                        <path d="M180 130 L220 130 M200 110 L200 150" stroke="#10B981" stroke-width="4" />
+                                        <circle cx="160" cy="100" r="10" fill="#3B82F6" />
+                                        <circle cx="240" cy="100" r="10" fill="#3B82F6" />
+                                        <circle cx="160" cy="160" r="10" fill="#3B82F6" />
+                                        <circle cx="240" cy="160" r="10" fill="#3B82F6" />
+                                        <!-- User -->
+                                        <circle cx="200" cy="250" r="20" fill="#FFFFFF" />
+                                        <path d="M185 270 Q200 290 215 270" fill="none" stroke="#FFFFFF" stroke-width="2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8">
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="400" height="300" fill="#1F2937" />
+                                        <!-- AI "brain" -->
+                                        <circle cx="200" cy="150" r="100" fill="#3B82F6" opacity="0.1" />
+                                        <path d="M150 100 Q200 50 250 100 Q300 150 250 200 Q200 250 150 200 Q100 150 150 100" fill="none" stroke="#3B82F6" stroke-width="4" />
+                                        <!-- Data points and connections -->
+                                        <circle cx="150" cy="100" r="10" fill="#10B981" />
+                                        <circle cx="250" cy="100" r="10" fill="#10B981" />
+                                        <circle cx="150" cy="200" r="10" fill="#10B981" />
+                                        <circle cx="250" cy="200" r="10" fill="#10B981" />
+                                        <line x1="150" y1="100" x2="250" y2="200" stroke="#FFFFFF" stroke-width="1" />
+                                        <line x1="250" y1="100" x2="150" y2="200" stroke="#FFFFFF" stroke-width="1" />
+                                        <!-- Analysis symbols -->
+                                        <text x="180" y="140" fill="#FFFFFF" font-size="20">AI</text>
+                                        <path d="M190 160 L210 160 M200 150 L200 170" stroke="#FFFFFF" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">2</div>
+                                <div class="w-1/2 pl-8">
+                                    <h3 class="text-2xl font-semibold mb-2">2. AI-Powered Analysis</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Our AI processes your input against vast datasets, market trends, and successful product patterns to generate comprehensive development strategies.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h3 class="text-2xl font-semibold mb-2">3. Expert Refinement</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Industry experts review and enhance AI-generated strategies, adding human insight and creativity to optimize the development plan.</p>
+                                </div>
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">3</div>
+                                <div class="w-1/2 pl-8">
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="400" height="300" fill="#1F2937" />
+                                        <!-- AI suggestion -->
+                                        <rect x="50" y="100" width="120" height="160" rx="10" fill="#3B82F6" opacity="0.6" />
+                                        <text x="70" y="140" fill="#FFFFFF" font-size="14">AI Suggestion</text>
+                                        <!-- Expert -->
+                                        <circle cx="200" cy="180" r="30" fill="#FFFFFF" />
+                                        <path d="M185 200 Q200 220 215 200" fill="none" stroke="#1F2937" stroke-width="2" />
+                                        <!-- Refined output -->
+                                        <rect x="230" y="100" width="120" height="160" rx="10" fill="#10B981" opacity="0.6" />
+                                        <text x="250" y="140" fill="#FFFFFF" font-size="14">Refined Plan</text>
+                                        <!-- Connecting arrows -->
+                                        <path d="M170 180 L230 180" fill="none" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arrowhead)" />
+                                        <defs>
+                                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                                <polygon points="0 0, 10 3.5, 0 7" fill="#FFFFFF" />
+                                            </marker>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8">
+                                                        <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#1F2937" />
+                        <!-- Roadmap Path -->
+                        <path d="M50 250 Q100 50 200 250 Q300 50 350 250" fill="none" stroke="url(#roadGradient)" stroke-width="4" />
+                        <defs>
+                            <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Milestones -->
+                        <circle cx="50" cy="250" r="10" fill="#FFFFFF" />
+                        <circle cx="200" cy="250" r="10" fill="#FFFFFF" />
+                        <circle cx="350" cy="250" r="10" fill="#FFFFFF" />
+                        <!-- Labels -->
+                        <text x="40" y="280" fill="#FFFFFF" font-size="12">Start</text>
+                        <text x="180" y="280" fill="#FFFFFF" font-size="12">Milestone</text>
+                        <text x="330" y="280" fill="#FFFFFF" font-size="12">Launch</text>
+                        <!-- Task Representations -->
+                        <rect x="80" y="180" width="40" height="20" fill="#10B981" opacity="0.8" />
+                        <rect x="180" y="100" width="40" height="20" fill="#3B82F6" opacity="0.8" />
+                        <rect x="280" y="140" width="40" height="20" fill="#10B981" opacity="0.8" />
+                        <!-- Connecting Lines -->
+                        <line x1="100" y1="200" x2="100" y2="246" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="4" />
+                        <line x1="200" y1="120" x2="200" y2="246" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="4" />
+                        <line x1="300" y1="160" x2="300" y2="246" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="4" />
+                    </svg>
+                                </div>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">4</div>
+                                <div class="w-1/2 pl-8">
+                                    <h3 class="text-2xl font-semibold mb-2">4. Actionable Roadmap</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Receive a comprehensive, step-by-step plan to bring your product to market. Our AI generates detailed timelines, resource allocations, and milestone tracking.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h3 class="text-2xl font-semibold mb-2">5. Continuous Optimization</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">As development progresses, simfoni.ai continuously analyzes progress, market changes, and emerging technologies to suggest optimizations and pivots.</p>
+                                </div>
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">5</div>
+                                <div class="w-1/2 pl-8">
+                                    <svg class="w-full h-auto" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#1F2937" />
+    <!-- Circular progress representation -->
+    <circle cx="200" cy="150" r="120" fill="none" stroke="#3B82F6" stroke-width="20" stroke-dasharray="754" stroke-dashoffset="188" />
+    <!-- Optimization arrow -->
+    <path d="M200 30 A120 120 0 0 1 320 150" fill="none" stroke="#10B981" stroke-width="4" />
+    <path d="M310 130 L330 150 L310 170" fill="none" stroke="#10B981" stroke-width="4" />
+    <!-- Central gears -->
+    <circle cx="200" cy="150" r="60" fill="#3B82F6" />
+    <path d="M200 90 L210 110 H190 Z" fill="#FFFFFF" />
+    <path d="M200 210 L210 190 H190 Z" fill="#FFFFFF" />
+    <path d="M140 150 L160 160 V140 Z" fill="#FFFFFF" />
+    <path d="M260 150 L240 160 V140 Z" fill="#FFFFFF" />
+    <!-- Smaller gear -->
+    <circle cx="270" cy="80" r="30" fill="#10B981" />
+    <path d="M270 50 L275 60 H265 Z" fill="#FFFFFF" />
+    <path d="M270 110 L275 100 H265 Z" fill="#FFFFFF" />
+    <path d="M240 80 L250 85 V75 Z" fill="#FFFFFF" />
+    <path d="M300 80 L290 85 V75 Z" fill="#FFFFFF" />
+    <!-- Data points -->
+    <circle cx="100" cy="100" r="10" fill="#FFFFFF" opacity="0.6" />
+    <circle cx="120" cy="220" r="8" fill="#FFFFFF" opacity="0.6" />
+    <circle cx="280" cy="200" r="12" fill="#FFFFFF" opacity="0.6" />
+    <!-- Connecting lines -->
+    <line x1="110" y1="100" x2="140" y2="150" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+    <line x1="120" y1="220" x2="140" y2="150" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+    <line x1="280" y1="200" x2="260" y2="150" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+</svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+      
+
+
+         <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">Ready to Revolutionize Your Product Development?</h2>
+                    <p class="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300">Join the ranks of innovative companies leveraging AI to accelerate their product development cycle and stay ahead of the competition.</p>
+                    <button id="finalCTA" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg">
+                        Get Early Access
+                    </button>
+                    <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">Limited spots available. Be among the first to experience the future of product development.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">simfoni.ai</h3>
+                    <p class="text-gray-400">Revolutionizing product development with AI-powered insights and expert collaboration.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-primary-light transition duration-300">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-primary-light transition duration-300">How It Works</a></li>
+                        <li><a href="#capabilities" class="text-gray-400 hover:text-primary-light transition duration-300">Capabilities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition duration-300">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition duration-300">LinkedIn</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light transition duration-300">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 simfoni.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate elements on scroll
+        gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        // Join waitlist buttons functionality
+        const joinListButtons = document.querySelectorAll('#joinListBtn, #mainCTA, #finalCTA');
+        joinListButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Thank you for your interest! We\'ve added you to our waitlist. We\'ll notify you when simfoni.ai is ready for early access.');
+            });
+        });
+    </script>
+</body>
+</html>
