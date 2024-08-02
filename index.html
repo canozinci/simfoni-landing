@@ -5,54 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simfoni.ai - AI-Powered Product Development Ecosystem</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
-                    },
                     colors: {
                         primary: {
-                            light: '#6EE7B7',
-                            DEFAULT: '#10B981',
+                            DEFAULT: '#10B981', // Emerald green
                             dark: '#059669',
                         },
                         secondary: {
-                            light: '#93C5FD',
-                            DEFAULT: '#3B82F6',
-                            dark: '#2563EB',
+                            DEFAULT: '#6366F1', // Indigo
+                            dark: '#4F46E5',
                         },
                         background: {
-                            light: '#F3F4F6',
-                            dark: '#1F2937',
+                            light: '#F9FAFB',
+                            dark: '#030712', // Very dark gray, almost black
                         },
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#111827', // Dark gray for card backgrounds
+                        },
+                        text: {
+                            light: '#1F2937',
+                            dark: '#F9FAFB',
+                        }
                     },
                 },
             },
         }
     </script>
     <style>
-        .gradient-text {
-            background: linear-gradient(45deg, #10B981, #3B82F6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+        .tagline {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1.2;
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-sans transition-colors duration-300">
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
 
-    <header class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+    <!-- Update the header -->
+    <header class="fixed w-full z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md">
         <nav class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
-            <div class="text-3xl font-bold gradient-text">simfoni.ai</div>
+            <div class="text-3xl font-bold text-primary dark:text-primary">simfoni.ai</div>
             <div class="flex items-center space-x-6 mt-4 md:mt-0">
-                <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary hover:dark:text-primary-light transition duration-300">Features</a>
-                <a href="#how-it-works" class="text-gray-600 dark:text-gray-300 hover:text-primary hover:dark:text-primary-light transition duration-300">How It Works</a>
+                <a href="#features" class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition duration-300">Features</a>
+                <a href="#how-it-works" class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition duration-300">How It Works</a>
                 <button id="joinListBtn" class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-full transition duration-300">
                     Join the List
                 </button>
@@ -66,87 +76,70 @@
     </header>
 
     <main>
-        <section class="pt-32 pb-20 overflow-hidden">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text" id="mainTitle">Orchestrate Product Development with AI</h1>
-                    <p class="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300" id="mainSubtitle">simfoni.ai is your AI-powered ecosystem that transforms ideas into market-ready digital products. From concept to launch, we blend cutting-edge AI with human expertise to accelerate your product development journey.</p>
-                    <button class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg" id="mainCTA">
-                        Join the Innovation Waitlist
-                    </button>
-                </div>
-                <div class="mt-16 relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary-light to-secondary-light opacity-20 blur-3xl"></div>
-                    <div class="relative z-10 bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-8">
-<svg class="w-full h-auto mb-8" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <!-- Background -->
-                            <rect width="800" height="400" fill="#1F2937" />
-                            <!-- Central Hub (simfoni.ai) -->
-                            <circle cx="400" cy="200" r="80" fill="url(#grad1)" />
-                            <text x="400" y="210" font-size="24" fill="#FFFFFF" text-anchor="middle">simfoni.ai</text>
-                            <!-- Ecosystem Components -->
-                            <g id="component1">
-                                <circle cx="200" cy="100" r="60" fill="#10B981" opacity="0.8" />
-                                <text x="200" y="105" font-size="14" fill="#FFFFFF" text-anchor="middle">AI Analysis</text>
-                            </g>
-                            <g id="component2">
-                                <circle cx="600" cy="100" r="60" fill="#3B82F6" opacity="0.8" />
-                                <text x="600" y="105" font-size="14" fill="#FFFFFF" text-anchor="middle">Expert Input</text>
-                            </g>
-                            <g id="component3">
-                                <circle cx="200" cy="300" r="60" fill="#3B82F6" opacity="0.8" />
-                                <text x="200" y="305" font-size="14" fill="#FFFFFF" text-anchor="middle">Development</text>
-                            </g>
-                            <g id="component4">
-                                <circle cx="600" cy="300" r="60" fill="#10B981" opacity="0.8" />
-                                <text x="600" y="305" font-size="14" fill="#FFFFFF" text-anchor="middle">Launch</text>
-                            </g>
-                            <!-- Connecting Lines -->
-                            <line x1="270" y1="130" x2="330" y2="170" stroke="#FFFFFF" stroke-width="2" />
-                            <line x1="530" y1="130" x2="470" y2="170" stroke="#FFFFFF" stroke-width="2" />
-                            <line x1="270" y1="270" x2="330" y2="230" stroke="#FFFFFF" stroke-width="2" />
-                            <line x1="530" y1="270" x2="470" y2="230" stroke="#FFFFFF" stroke-width="2" />
-                            <!-- Flow Arrows -->
-                            <path d="M400 120 L400 80 L440 100 Z" fill="#FFFFFF" />
-                            <path d="M680 200 L720 200 L700 240 Z" fill="#FFFFFF" />
-                            <path d="M400 280 L400 320 L360 300 Z" fill="#FFFFFF" />
-                            <path d="M120 200 L80 200 L100 160 Z" fill="#FFFFFF" />
-                        </svg>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div class="text-center">
-                                <h3 class="text-2xl font-semibold mb-2 text-primary">300% Faster</h3>
-                                <p>Development acceleration through AI-driven insights and automation</p>
-                            </div>
-                            <div class="text-center">
-                                <h3 class="text-2xl font-semibold mb-2 text-secondary">60% Less Risk</h3>
-                                <p>Predictive analysis reduces project uncertainties and potential pitfalls</p>
-                            </div>
-                            <div class="text-center">
-                                <h3 class="text-2xl font-semibold mb-2 text-accent">85% More Efficient</h3>
-                                <p>Optimized workflows and AI-human collaboration boost team productivity</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-<!-- Add this new section after the main hero section and before the "Comprehensive Product Development Support" section -->
-
-<section id="realizing-opportunities" class="py-20 bg-gray-100 dark:bg-gray-800">
+      
+<!-- Example of updated hero section -->
+<section class="pt-32 pb-20">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Turning Ideas into Reality: The 0 to 1 Challenge</h2>
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
-                <div class="p-8">
-                    <p class="text-lg mb-6">Let's face it: bringing great ideas to life is tough. Whether you're a startup or a Fortune 500 company, getting from 0 to 1 can feel like climbing Mount Everest in flip-flops.</p>
-                    
-                    <h3 class="text-2xl font-semibold mb-4 text-primary">Why is it so hard?</h3>
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-6xl mb-6 text-primary dark:text-primary-dark">AI-Powered Product Magic</h1>
+            <p class="tagline mb-8 text-gray-700 dark:text-gray-300">From wild idea to market hit - simfoni.ai speeds up your journey.</p>
+            <button class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full text-xl transition duration-300 shadow-lg">
+                Get Early Access
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Example of updated feature section -->
+<section id="features" class="py-20 bg-surface-light dark:bg-surface-dark">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center text-primary dark:text-primary-dark">Key Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <h3 class="text-2xl font-semibold text-primary dark:text-primary-dark">Rapid Development</h3>
+                </div>
+                <p class="text-text-light dark:text-text-dark">Accelerate your product journey from concept to launch with AI-powered insights and streamlined workflows.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                    <h3 class="text-2xl font-semibold text-primary dark:text-primary-dark">Intelligent Decisions</h3>
+                </div>
+                <p class="text-text-light dark:text-text-dark">Leverage AI analysis and human expertise to make informed choices throughout the development process.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <h3 class="text-2xl font-semibold text-primary dark:text-primary-dark">Team Optimization</h3>
+                </div>
+                <p class="text-text-light dark:text-text-dark">Enhance collaboration and efficiency by aligning AI capabilities with your team's strengths and skills.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+      
+      
+      
+
+
+        <section id="realizing-opportunities" class="py-20 bg-white dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center text-primary dark:text-primary">Turning Ideas into Reality: The 0 to 1 Challenge</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-background-light dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-8">
+                            <p class="text-lg mb-6">Let's face it: bringing great ideas to life is tough. Whether you're a startup or a Fortune 500 company, getting from 0 to 1 can feel like climbing Mount Everest in flip-flops.</p>
+                            
+                            <h3 class="text-2xl font-semibold mb-4 text-secondary dark:text-secondary">Why is it so hard?</h3>
                     
                     <div class="grid md:grid-cols-2 gap-6 mb-8">
                         <div class="flex items-start">
@@ -179,26 +172,27 @@
                         </div>
                     </div>
 
-                    <h3 class="text-2xl font-semibold mb-4 text-primary">Enter simfoni.ai: Your 0 to 1 Superpower</h3>
-                    
-                    <p class="text-lg mb-6">Imagine having a genius best friend who's also a Swiss Army knife. That's simfoni.ai for your business. We're here to turn that daunting 0 to 1 journey into your greatest asset.</p>
+                   <h3 class="text-2xl font-semibold mb-4 text-secondary dark:text-secondary">Enter simfoni.ai: Your 0 to 1 Superpower</h3>
+                            
+                            <p class="text-lg mb-6">Imagine having a genius best friend who's also a Swiss Army knife. That's simfoni.ai for your business. We're here to turn that daunting 0 to 1 journey into your greatest asset.</p>
 
-                    <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg">
-                        <h4 class="font-semibold mb-2 text-xl">How simfoni.ai works its magic:</h4>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                            <li>Tames wild ideas into actionable plans</li>
-                            <li>Brings together insights from every corner of your business</li>
-                            <li>Offers expert-level advice without the expert-level ego</li>
-                            <li>Finds the shortest path between "What if?" and "Wow!"</li>
-                        </ul>
+                            <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg">
+                                <h4 class="font-semibold mb-2 text-xl">How simfoni.ai works its magic:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-text-light dark:text-text-dark">
+                                    <li>Tames wild ideas into actionable plans</li>
+                                    <li>Brings together insights from every corner of your business</li>
+                                    <li>Offers expert-level advice without the expert-level ego</li>
+                                    <li>Finds the shortest path between "What if?" and "Wow!"</li>
+                                </ul>
+                            </div>
+
+                            <p class="text-lg mt-6">With simfoni.ai, you're not just solving problems – you're unlocking opportunities you didn't even know existed. It's like having a crystal ball, but one that actually works and doesn't require any hand-waving.</p>
+                        </div>
                     </div>
-
-                    <p class="text-lg mt-6">With simfoni.ai, you're not just solving problems – you're unlocking opportunities you didn't even know existed. It's like having a crystal ball, but one that actually works and doesn't require any hand-waving.</p>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+
         <section id="product-development-aspects" class="py-20 bg-gray-100 dark:bg-gray-800">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Comprehensive Product Development Support</h2>
@@ -306,25 +300,13 @@
     </div>
 </section>
 
-<section id="tailored-solutions" class="py-20 bg-gradient-to-br from-gray-900 via-primary-dark to-secondary-dark text-white overflow-hidden">
-    <div class="container mx-auto px-4 relative">
-        <!-- Background elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
-            <div class="w-64 h-64 bg-primary rounded-full absolute -top-32 -left-32 filter blur-3xl opacity-20"></div>
-            <div class="w-96 h-96 bg-secondary rounded-full absolute -bottom-48 -right-48 filter blur-3xl opacity-20"></div>
-            <div class="w-48 h-48 bg-primary-light rounded-full absolute top-1/4 left-1/4 filter blur-3xl opacity-10"></div>
-            <div class="w-72 h-72 bg-secondary-light rounded-full absolute bottom-1/4 right-1/3 filter blur-3xl opacity-10"></div>
-        </div>
-        
-        <h2 class="text-5xl font-extrabold mb-16 text-center leading-tight relative z-10">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-secondary-light">Tailored Solutions</span>
-            <br>Within Your Universe
-        </h2>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-8 transform hover:scale-105 transition duration-300 group border border-white border-opacity-20 shadow-lg">
-                    <div class="h-24 w-24 bg-primary bg-opacity-30 rounded-full mb-6 flex items-center justify-center group-hover:animate-spin backdrop-filter backdrop-blur-sm border border-primary border-opacity-50">
+        <section id="tailored-solutions" class="py-20 bg-background-dark text-text-dark">
+            <div class="container mx-auto px-4 relative">
+                <h2 class="text-4xl font-bold mb-12 text-center text-primary-dark">Tailored Solutions Within Your Universe</h2>
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                        <div class="bg-background-dark backdrop-filter backdrop-blur-lg rounded-lg p-8 border border-gray-700 shadow-lg">
+                            <div class="h-20 w-20 bg-primary rounded-full mb-6 flex items-center justify-center">
                         <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Team-Aware Solutions</h3>
@@ -658,7 +640,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-background-dark text-text-dark py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div>
